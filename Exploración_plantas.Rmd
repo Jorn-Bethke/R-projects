@@ -34,6 +34,8 @@ Del total de especies de plantas extintas que hay en la base de datos, existen *
 
 ### Analizando el sueño de los mamíferos
 
+##### Resumen de las horas de sueño de los mamíferos según su dieta:
+
 ```{r}
 
 Tabla <- msleep %>% 
@@ -42,6 +44,18 @@ Tabla <- msleep %>%
   dplyr::filter(!is.na(vore)) %>% 
   arrange(desc(Mean))
 
-kable(Tabla, digits = 2, caption = "La tabla de ejemplo") %>%  kable_styling(bootstrap_options = c("striped", "hover", "condense"), full_width = FALSE) %>% scroll_box(width = "200px", height = "150px")
+kable(Tabla, digits = 2, caption = "La tabla de ejemplo") %>%  kable_styling(bootstrap_options = c("striped", "hover", "condense"), full_width = FALSE, position = "center") 
 
-````
+```
+##### Tabla que indica tipo de dieta, horas de sueño y peso del cerebro para cada uno de los mamíferos en la base de datos
+
+```{r}
+msleep_long <- msleep %>%  dplyr::select(name, vore, sleep_total, brainwt)
+
+kable(msleep_long, digits = 2, caption = "Tabla completa") %>%  kable_styling(bootstrap_options = c("strtiped", "hover", "condensd") , full_width = FALSE) %>% scroll_box(width = "600px", height = "200px", posi)
+
+
+
+
+```
+
