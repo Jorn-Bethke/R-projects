@@ -24,6 +24,36 @@ Para_captura <- fish_encounters %>% pivot_wider(names_from = "station", # me dej
 )
 
 
+data("warpbreaks")
+colnames(warpbreaks)
+
+Lana <- warpbreaks %>%  pivot_wider(names_from = "tension", 
+                                    values_from = "breaks",
+                                    values_fn = mean 
+                                    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
